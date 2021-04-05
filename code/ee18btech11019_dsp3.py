@@ -32,10 +32,10 @@ def fft(x):
 	return np.hstack((X_u,X_l))
 
 
-dft_time = np.zeros(12)
-fft_time = np.zeros(12)
+dft_time = np.zeros(10)
+fft_time = np.zeros(10)
 
-for i in range(12):
+for i in range(10):
 	N = 2**i
 	x = np.random.randint(1,5,size=N)
 	t1 = time.time()
@@ -46,7 +46,7 @@ for i in range(12):
 	dft_time[i] = t2-t1
 	fft_time[i] = t3-t2
 	
-axis = 2**np.arange(12)
+axis = 2**np.arange(10)
 plt.plot(axis, dft_time, label = 'DFT Computation Time')
 plt.plot(axis, fft_time, label = 'FFT Computation Time')
 plt.title('DFT vs FFT Computation Times')
